@@ -3,6 +3,7 @@ expect = chai.expect
 chai.should()
 
 {TaskList, Task} = require '../src/task'
+
 describe 'Task', ->
   task1 = task2 = null
 
@@ -29,3 +30,11 @@ describe 'Task', ->
 
   it 'should refuse completion it is dependent on an uncompleted task', ->
     (-> task2.complete()).should.throw "Dependent task 'wash dishes' is not completed."
+
+describe 'TaskList', ->  
+  taskList = null  
+
+  it 'should start with no tasks', ->  
+    taskList = new TaskList  
+    taskList.tasks.length.should.equal 0  
+    taskList.length.should.equal 0
