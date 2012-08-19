@@ -1,0 +1,37 @@
+* Desarrollo guiado por tests con CoffeeScript y Mocha
+
+El original de [[http://net.tutsplus.com/tutorials/javascript-ajax/better-coffeescript-testing-with-mocha][Andres Burgess]] es una excelente ejercicio introductorio
+de TDD con CoffeeScript y Mocha.
+
+El historial de este repositorio sirve para seguir los pasos descritos
+en el original.
+
+** Requisitos
+
+- node.js
+- npm
+- mocha
+- chai
+
+#+BEGIN_SRC sh
+sudo yum install npm
+
+sudo npm install -g mocha
+
+sudo npm install -g chai
+#+END_SRC
+
+Como editor de textos uso Emacs 24, al que he instalado el paquete
+coffeescript:
+
+#+BEGIN_SRC sh
+M x package-install 
+coffee-mode
+#+END_SRC
+
+** Estructura del proyecto
+
+- shell script para compilar (build.sh) y para eliminar ficheros
+  innecesarios (clean-js.sh)
+
+ 
