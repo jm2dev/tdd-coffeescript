@@ -49,3 +49,8 @@ describe 'TaskList', ->
     taskList.add 'take out garbage'  
     taskList.tasks[1].name.should.equal 'take out garbage'  
     taskList.length.should.equal 2
+
+  it 'should remove tasks', ->  
+    i = taskList.length - 1  
+    taskList.remove taskList.tasks[i]  
+    expect(taskList.tasks[i]).to.not.be.ok 

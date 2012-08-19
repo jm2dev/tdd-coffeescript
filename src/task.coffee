@@ -24,6 +24,11 @@ class TaskList
       @tasks.push task  
     @length = @tasks.length
 
+  remove: (task) ->   
+    i = @tasks.indexOf task  
+    @tasks = @tasks[0...i].concat @tasks[i+1..] if i > -1  
+    @length = @tasks.length
+
 root = exports ? window
 root.Task = Task
 root.TaskList = TaskList
