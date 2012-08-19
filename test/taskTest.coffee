@@ -53,4 +53,36 @@ describe 'TaskList', ->
   it 'should remove tasks', ->  
     i = taskList.length - 1  
     taskList.remove taskList.tasks[i]  
-    expect(taskList.tasks[i]).to.not.be.ok 
+    expect(taskList.tasks[i]).to.not.be.ok
+
+   it 'should print out the list', ->  
+    taskList = new TaskList  
+    task0 = new Task 'buy milk'  
+    task1 = new Task 'go to store'  
+    task2 = new Task 'another task'  
+    task3 = new Task 'sub-task'  
+    task4 = new Task 'sub-sub-task'  
+  
+    taskList.add task0  
+    taskList.add task1  
+    taskList.add task2  
+    taskList.add task3  
+    taskList.add task4  
+  
+    task0.dependsOn task1  
+    task4.dependsOn task3  
+    task3.dependsOn task2  
+  
+    task1.complete()  
+  
+    desiredOutput = """Tasks
+ 
+- buy milk (depends on 'go to store')
+- go to store (complete)
+- another task
+- sub-task (depends on 'another task')
+- sub-sub-task (depends on 'sub-task')
+ 
+"""  
+
+    taskList.print().should.equal desiredOutput

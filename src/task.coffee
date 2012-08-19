@@ -29,6 +29,15 @@ class TaskList
     @tasks = @tasks[0...i].concat @tasks[i+1..] if i > -1  
     @length = @tasks.length
 
+  print: ->  
+    str = "Tasks\n\n"  
+    for task in @tasks  
+      str += "- #{task.name}"  
+      str += " (depends on '#{task.parent.name}')" if task.parent?  
+      str += ' (complete)' if task.status is 'complete'  
+      str += "\n"  
+    str
+
 root = exports ? window
 root.Task = Task
 root.TaskList = TaskList
