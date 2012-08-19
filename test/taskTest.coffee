@@ -38,3 +38,14 @@ describe 'TaskList', ->
     taskList = new TaskList  
     taskList.tasks.length.should.equal 0  
     taskList.length.should.equal 0
+
+  it 'should accept new tasks as tasks', ->  
+    task = new Task 'buy milk'  
+    taskList.add task  
+    taskList.tasks[0].name.should.equal 'buy milk'  
+    taskList.length.should.equal 1  
+
+  it 'should accept new tasks as string', ->  
+    taskList.add 'take out garbage'  
+    taskList.tasks[1].name.should.equal 'take out garbage'  
+    taskList.length.should.equal 2
