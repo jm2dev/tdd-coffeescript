@@ -9,16 +9,43 @@ en el original.
 ** Requisitos
 
 - node.js
-- npm
+- coffeescript
 - mocha
 - chai
 
+#+NAME: Instalación de node sin usuario privilegiado
 #+BEGIN_SRC sh
-sudo yum install npm
+mkdir ~/local
 
-sudo npm install -g mocha
+cd ~/local 
 
-sudo npm install -g chai
+wget http://nodejs.org/dist/v0.8.8/node-v0.8.8.tar.gz
+
+tar zxvf node-v0.8.8.tar.gz
+
+cd node-v0.8.8
+
+echo prefix = ~/local >> ~/.npmrc
+
+./configure --prefix=~/local
+
+make install //gmake en FreeBSD
+#+END_SRC
+
+#+NAME: Actualización de la variable PATH en zsh: .zshrc
+#+BEGIN_SRC sh
+export PATH="$PATH:/home/usuario/local/bin"
+#+END_SRC
+
+#+NAME: Instalación de los módulos
+#+BEGIN_SRC sh
+npm install -g coffee-script
+
+npm install -g mocha
+
+npm install chai
+
+npm link chai
 #+END_SRC
 
 Como editor de textos uso Emacs 24, al que he instalado el paquete
@@ -35,3 +62,5 @@ coffee-mode
   innecesarios (clean-js.sh)
 
  
+
+http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation/
