@@ -17,8 +17,6 @@ en el original.
 #+BEGIN_SRC sh
 mkdir ~/local
 
-cd ~/local 
-
 wget http://nodejs.org/dist/v0.8.8/node-v0.8.8.tar.gz
 
 tar zxvf node-v0.8.8.tar.gz
@@ -29,7 +27,10 @@ echo prefix = ~/local >> ~/.npmrc
 
 ./configure --prefix=~/local
 
-make install //gmake en FreeBSD
+make install 
+//gmake en FreeBSD
+
+rm -fr node-v0.8.8
 #+END_SRC
 
 #+NAME: Actualización de la variable PATH en zsh: .zshrc
@@ -43,7 +44,7 @@ npm install -g coffee-script
 
 npm install -g mocha
 
-npm install chai
+npm install -g chai
 
 npm link chai
 #+END_SRC
