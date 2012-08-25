@@ -1,4 +1,7 @@
-* Desarrollo guiado por tests con CoffeeScript y Mocha
+#+TITLE: Desarrollo guiado por tests con CoffeeScript y Mocha
+#+AUTHOR: Jose Miguel
+
+[[https://secure.travis-ci.org/jm2dev/tdd-coffeescript.png]][[http://secure.travis-ci.org/jm2dev/tdd-coffeescript][travis-ci]]
 
 El original de [[http://net.tutsplus.com/tutorials/javascript-ajax/better-coffeescript-testing-with-mocha][Andres Burgess]] es una excelente ejercicio introductorio
 de TDD con CoffeeScript y Mocha.

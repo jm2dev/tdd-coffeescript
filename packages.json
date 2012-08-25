@@ -1,0 +1,22 @@
+{
+  "name": "tdd-coffeescript",
+  "author": "Jose Miguel",
+  "description": "TDD with cofeescript and mocha",
+  "version": "0.0.1",
+  "homepage": "http://travis-ci.org/#!/jm2dev/tdd-coffeescript",
+  "main": "./lib/serious-calculations",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jm2dev/tdd-coffeescript.git"
+  },
+  "scripts": {
+    "test": "mocha --compilers coffee:coffee-script -R spec"
+  },
+  "engines": {
+    "node": ">= 0.8"
+  },
+  "dependencies": {
+    "mocha": "*",
+    "chai": "*"
+  }
+}
