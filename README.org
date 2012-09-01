@@ -36,6 +36,8 @@ make install
 rm -fr node-v0.8.8
 #+END_SRC
 
+Cambia 'usuario' por la salida de 'whoami'
+
 #+NAME: Actualización de la variable PATH en zsh: .zshrc
 #+BEGIN_SRC sh
 export PATH="$PATH:/home/usuario/local/bin"
@@ -55,6 +57,7 @@ npm link chai
 Como editor de textos uso Emacs 24, al que he instalado el paquete
 coffeescript:
 
+#+NAME: Coffee-mode para Emacs
 #+BEGIN_SRC sh
 M x package-install 
 coffee-mode
@@ -65,6 +68,15 @@ coffee-mode
 - shell script para compilar (build.sh) y para eliminar ficheros
   innecesarios (clean-js.sh)
 
+#+NAME: Build
+#+BEGIN_SRC sh
+./build
+#+END_SRC
+
+#+NAME: Ejecutar tests
+#+BEGIN_SRC sh
+cake test
+#+END_SRC
  
 
 http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation/
